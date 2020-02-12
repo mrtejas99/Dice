@@ -42,13 +42,13 @@ public class PlayGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (count > 0) {
+                    RotateAnimation animate = new RotateAnimation(0.0f, 360.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+                    animate.setInterpolator(new LinearInterpolator());
+                    animate.setRepeatCount(2);
+                    animate.setDuration(100);
+                    dice.startAnimation(animate);
                     if (player == 1) {
                         player = 0;
-                        RotateAnimation animate = new RotateAnimation(0.0f, 360.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                        animate.setInterpolator(new LinearInterpolator());
-                        animate.setRepeatCount(2);
-                        animate.setDuration(100);
-                        dice.startAnimation(animate);
                         Random gen = new Random();
                         Integer tmp_score1 = gen.nextInt(imageIds.length) + 1;
                         Integer randomImg = imageIds[tmp_score1 - 1];
@@ -58,11 +58,6 @@ public class PlayGame extends AppCompatActivity {
 
                     } else {
                         player = 1;
-                        RotateAnimation animate = new RotateAnimation(0.0f, 360.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                        animate.setInterpolator(new LinearInterpolator());
-                        animate.setRepeatCount(2);
-                        animate.setDuration(100);
-                        dice.startAnimation(animate);
                         Random gen = new Random();
                         Integer tmp_score2 = gen.nextInt(imageIds.length) + 1;
                         Integer randomImg = imageIds[tmp_score2 - 1];

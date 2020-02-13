@@ -63,6 +63,8 @@
         android:id="@+id/txt_selectedMoves"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_start"
         app:layout_constraintEnd_toEndOf="@+id/edit_player2"
         app:layout_constraintStart_toStartOf="@+id/edit_player2"

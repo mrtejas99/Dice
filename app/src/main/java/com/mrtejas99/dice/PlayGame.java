@@ -68,7 +68,12 @@ public class PlayGame extends AppCompatActivity {
                     count -= 1;
                     txt_moves.setText(count.toString() + " moves remaining");
                 } else {
-                    Toast.makeText(getApplicationContext(), "Game Over", Toast.LENGTH_LONG).show();
+                    if (score2 > score1)
+                        Toast.makeText(getApplicationContext(), player2 + " is the winner", Toast.LENGTH_LONG).show();
+                    else if (score1 > score2)
+                        Toast.makeText(getApplicationContext(), player1 + " is the winner", Toast.LENGTH_LONG).show();
+                    else
+                        Toast.makeText(getApplicationContext(), "It's a draw", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -80,6 +85,11 @@ public class PlayGame extends AppCompatActivity {
 
         player1 = bundle.getString("player1");
         player2 = bundle.getString("player2");
+        if (player1 == player2) {
+            player1 = "Computer";
+            player2 = "Human";
+        }
+
         txt_player1.setText(player1);
         txt_player2.setText(player2);
     }

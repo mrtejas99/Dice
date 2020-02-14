@@ -18,7 +18,7 @@ import java.util.Random;
 public class PlayGame extends AppCompatActivity {
     String moves = "", player1, player2;
     Integer player = 1, count, score1 = 0, score2 = 0;
-    TextView txt_moves;
+    TextView txt_moves, txt_greet;
     TextView txt_player1, txt_player2;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class PlayGame extends AppCompatActivity {
         final Integer[] imageIds = {R.drawable.one, R.drawable.two, R.drawable.three, R.drawable.four, R.drawable.five, R.drawable.six};
         txt_player1 = findViewById(R.id.txt_player1);
         txt_player2 = findViewById(R.id.txt_player2);
+        txt_greet = findViewById(R.id.txt_greet);
         Button btn_reset = findViewById(R.id.btn_reset);
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +42,7 @@ public class PlayGame extends AppCompatActivity {
         dice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                txt_greet.setVisibility(View.INVISIBLE);
                 if (count > 0) {
                     RotateAnimation animate = new RotateAnimation(0.0f, 360.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
                     animate.setInterpolator(new LinearInterpolator());

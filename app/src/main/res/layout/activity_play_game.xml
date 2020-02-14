@@ -65,4 +65,15 @@
         app:layout_constraintEnd_toEndOf="@+id/dice"
         app:layout_constraintStart_toStartOf="@+id/dice"
         app:layout_constraintTop_toBottomOf="@+id/dice" />
+
+    <TextView
+        android:id="@+id/txt_greet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tap to Play!"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dice"
+        app:layout_constraintEnd_toEndOf="@+id/dice"
+        app:layout_constraintStart_toStartOf="@+id/dice"
+        app:layout_constraintTop_toTopOf="@+id/dice" />
 </androidx.constraintlayout.widget.ConstraintLayout>

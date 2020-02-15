@@ -88,8 +88,8 @@ public class PlayGame extends AppCompatActivity {
         player1 = bundle.getString("player1");
         player2 = bundle.getString("player2");
         if (player1 == player2) {
-            player1 = "Computer";
-            player2 = "Human";
+            player1 = "Human";
+            player2 = "Computer";
         }
 
         txt_player1.setText(player1);

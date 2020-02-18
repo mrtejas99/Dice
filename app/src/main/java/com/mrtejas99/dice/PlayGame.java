@@ -92,6 +92,7 @@ public class PlayGame extends AppCompatActivity {
                     count -= 1;
                     Toast.makeText(getApplicationContext(), count.toString() + " moves remaining", Toast.LENGTH_LONG);
                 } else {
+                    txt_turn.setVisibility(View.INVISIBLE);
                     if (score2 > score1)
                         Toast.makeText(getApplicationContext(), player2 + " is the winner", Toast.LENGTH_LONG).show();
                     else if (score1 > score2)

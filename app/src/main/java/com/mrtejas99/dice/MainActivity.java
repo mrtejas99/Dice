@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 String moves = edit_moves.getText().toString();
                 bundle.putString("moves", moves);
+                bundle.putBoolean("singleMode", true);
                 toPlayGame.putExtra("bundle", bundle);
                 startActivity(toPlayGame);
             }
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 String moves = edit_moves.getText().toString();
                 bundle.putString("moves", moves);
+                bundle.putBoolean("singleMode", false);
                 toPlayerData.putExtra("bundle", bundle);
                 startActivity(toPlayerData);
             }

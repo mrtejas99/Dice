@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
                 EditText edit_moves = findViewById(R.id.edit_moves);
                 Bundle bundle = new Bundle();
                 String moves = edit_moves.getText().toString();
+                if (moves.matches("")) {
+                    Toast.makeText(getApplicationContext(), "Enter number of moves", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 bundle.putString("moves", moves);
                 bundle.putBoolean("singleMode", true);
                 toPlayGame.putExtra("bundle", bundle);
@@ -37,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
                 EditText edit_moves = findViewById(R.id.edit_moves);
                 Bundle bundle = new Bundle();
                 String moves = edit_moves.getText().toString();
+                if (moves.matches("")) {
+                    Toast.makeText(getApplicationContext(), "Enter number of moves", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 bundle.putString("moves", moves);
                 bundle.putBoolean("singleMode", false);
                 toPlayerData.putExtra("bundle", bundle);

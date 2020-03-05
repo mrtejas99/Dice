@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,8 +34,15 @@ public class PlayerData extends AppCompatActivity {
                 //send intent
                 edit_player1 = findViewById(R.id.edit_player1);
                 edit_player2 = findViewById(R.id.edit_player2);
-                bundle.putString("player1", edit_player1.getText().toString());
-                bundle.putString("player2", edit_player2.getText().toString());
+                String player1 = edit_player1.getText().toString();
+                String player2 = edit_player2.getText().toString();
+
+                if (player1.matches("") || player2.matches("")) {
+                    Toast.makeText(getApplicationContext(), "Enter name of players", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                bundle.putString("player1", player1);
+                bundle.putString("player2", player2);
                 toPlayGame.putExtra("bundle", bundle);
                 startActivity(toPlayGame);
             }

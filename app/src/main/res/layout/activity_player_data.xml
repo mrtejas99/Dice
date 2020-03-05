@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.066"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
     <EditText
         android:id="@+id/edit_player1"
@@ -51,6 +51,7 @@
         android:id="@+id/btn_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#8C09CE5B"
         android:text="start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/edit_player2"

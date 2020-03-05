@@ -19,7 +19,7 @@ import java.util.Random;
 public class PlayGame extends AppCompatActivity {
     String moves = "", player1, player2;
     Integer player = 1, count, score1 = 0, score2 = 0;
-    TextView txt_turn, txt_greet, txt_prompt;
+    TextView txt_turn, txt_greet, txt_prompt, txt_count;
     TextView txt_player1, txt_player2;
     Boolean singleMode;
     RotateAnimation animate;
@@ -34,6 +34,7 @@ public class PlayGame extends AppCompatActivity {
         txt_player1 = findViewById(R.id.txt_player1);
         txt_player2 = findViewById(R.id.txt_player2);
         txt_greet = findViewById(R.id.txt_greet);
+        txt_count = findViewById(R.id.txt_count);
         txt_prompt = findViewById(R.id.txt_prompt);
         txt_prompt.setVisibility(View.INVISIBLE);
         Button btn_reset = findViewById(R.id.btn_reset);
@@ -96,8 +97,10 @@ public class PlayGame extends AppCompatActivity {
                         txt_turn.setText(player1 + "'s turn");
                     }
                     count -= 1;
+                    txt_count.setText(count.toString() + " moves remaining");
                     Toast.makeText(getApplicationContext(), count.toString() + " moves remaining", Toast.LENGTH_LONG);
                 } else {
+                    txt_count.setVisibility(View.INVISIBLE);
                     txt_turn.setVisibility(View.INVISIBLE);
                     if (score2 > score1)
                         Toast.makeText(getApplicationContext(), player2 + " is the winner", Toast.LENGTH_LONG).show();
